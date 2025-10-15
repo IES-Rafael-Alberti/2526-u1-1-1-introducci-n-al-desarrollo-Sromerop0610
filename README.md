@@ -9,26 +9,37 @@ Apoyate en los siguientes recursos para realizar la práctica:
 
 ---
 
-# Título de la Actividad
+# P1.2 Ponlo en practica - Evaluable
 
 ## Identificación de la Actividad
-- **ID de la Actividad:** [ID de la actividad]
-- **Módulo:** [Nombre del módulo] (`PROG`, `IS`, `EDES`, etc.)
-- **Unidad de Trabajo:** [Número y nombre de la unidad de trabajo]
-- **Fecha de Creación:** [Fecha de creación]
-- **Fecha de Entrega:** [Fecha de entrega]
+- **ID de la Actividad:** P1.2
+- **Módulo:** EDES
+- **Unidad de Trabajo:** U1: Introducción al desarrollo de Software
+- **Fecha de Creación:** 15/10/2025
+- **Fecha de Entrega:** 16/10/2025
 - **Alumno(s):** 
-  - **Nombre y Apellidos:** [Nombre y Apellidos del alumno o integrantes del grupo]
-  - **Correo electrónico:** [Correo electrónico g.educaand.es]
-  - **Iniciales del Alumno/Grupo:** [Iniciales del alumno o del grupo]
+  - **Nombre y Apellidos:** Sara Romero Peralta
+  - **Correo electrónico:** sromper0610@g.educaand.es
+  - **Iniciales del Alumno/Grupo:** S.R.P
 
 ## Descripción de la Actividad
-[Descripción detallada de la actividad, objetivos, y contexto necesario para comprenderla. Explicar en qué consiste la actividad y qué se espera que el alumno desarrolle o implemente.]
+La actividad consiste en evaluar la relación que tienen el software y el hardware, clasificar los lenguajes de programación, comprendiendo los diferentes profesos de ejecución que tienen (compilador, interprete y máquinas virtuales) usando de ejemplo un codigo simple en cada uno de los tres programas para enseñar su ejecución
+Vamos a usar para ello los siguientes tres programas:
+- **Python** (lenguaje interpretado)
+- **C** (lenguaje compilado)
+- **Java** (lenguaje que genera código intermedio ejecutado en una máquina virtual)
 
+Cada programa debe pedir el nombre del usuario, su año de nacimiento, calcular su edad, y mostrar en un mensaje el nombre y la edad
 ## Instrucciones de Compilación y Ejecución
 1. **Requisitos Previos:**
-   - [Lenguaje de programación y versión]
-   - [Entorno de desarrollo o dependencias necesarias]
+   - **Entorno de desarrollo:** Visual Studio Code
+   - **Sistema operativo:** Windows 11
+   - **Terminal utilizada:** Git Bash
+   - **Lenguajes usados:**
+      - **Python** (ejecutado mediante la extensión de Python en VS Code)
+      - **C** (ejecutado mediante la extensión Code Runner en VS Code)
+      - **Java** (ejecutado desde la extensión de Java en VS Code)
+   - No fue necesario instalar compiladores o intérpretes por separado, ya que VS code gestiona la ejecución de los tres lenguajes a través de las extensiones
 
 2. **Pasos para Compilar el Código:**
    ```bash
@@ -78,3 +89,43 @@ Apoyate en los siguientes recursos para realizar la práctica:
    - Si se entrega en formato PDF o Google Docs, asegúrate de cumplir con el mínimo y máximo de folios establecidos.
 4. **Compilación y Ejecución:**
    - Detalla claramente cómo compilar y ejecutar el código, incluyendo las instrucciones en el archivo `README.md`.
+
+
+## Respuesta a las preguntas
+
+### Criterio de evaluación 1.a: Relación entre el Software y Hardware
+#### Pregunta:
+##### Describe cómo el software que has creado se ha relacionado con los componentes físicos del dispositivo (memoria RAM, procesador, preriféricos, etc) durante la ejecución de los tres lenguajes (interpretado, compilado y en máquina)
+##### Puntos a incluir:
+#####    - Cómo se almacenaron los datos en memoria
+#####    - Qué hizo el procesador con el cógigo
+#####    - Si se interactuó con peroféricos, como la pantalla para mostrar la salida
+Para que los programas pudiesen ejecutarse, el procesador (CPU) tomó las instrucciones y las ejecutó, la memoria RAM guardó temporalmente la información que necesita rápidamente, no hizo uso del disco duro o SSD porque no se guardó información a largo plazo, y los periféricos se usaron para que el usuario y el software se pudiesen comunicar. De forma explayada, lo que pasó fue que:
+   - Memoria RAM: el código fuente se cargó directamente en la memoria junto con los datos introducidos por el usuario. Las variables se almacenaron temporalmente en la RAM mientras el programa se ejecutaba
+   - Procesador (CPU): ejecutó las instrucciones derivadas del código fuente, con la diferencia de que:
+      - En Python: el intérprete leyó el código línea por línea y lo tradujo internamente a insttrucciones que la CPU pudiese ejecutar
+      - En C: la CPU ejecutó directamente las instrucciones (el código ya estaba traducido al lenguaje máquina, así que la ejecución fue más rápida y directa)
+      - En Java: se interpretó o compiló en tiempo de ejecución a instrucciones que el procesador pudiera entender
+   - Periféricos: se necesitó del uso de la pantalla (para que el usuario pudiese ver lo que el código mostraba o pedia) y el teclado (para que el usuario pudiese introducir los valores que el código solicitaba)
+No se hizo uso del disco duro ya que no se necesitó guardar información a largo plazo (más allá que almacenar los propios programas)
+
+### Criterio de evaluación 1.c: Diferenciación entre el Código Fuente, Código objeto y Ejecutable
+#### Preguntas:
+##### 1. Explica cómo el código fuente que escribiste se transformó en código objeto y ejecutable en el caso de los lenguajes compilados. ¿Generaste archivos intermedios (código objeto)? ¿Qué nombres tomaron estos archivos?
+Lenguaje compilado (C):
+   - Código fuente: archivo "programa.c", contiene las instrucciones legibles por humanos (como pedir el nombre y año de nacimiento y calcular la edad de usuario)
+   - Código objeto: al compilar, el compilador genera un archivo intermedio (programa.o). Este archivo contiene instrucciones en lenguaje máquina, que todavía no puede ejecutarse solo, ya que debe enlazarse con otras partes y bibliotecas necesarias
+   - Código ejecutable: al enlazar el código objeto, se obtiene un archivo ejecutable (programa.ex en mi caso, ya que uso Windows). La CPU puede ejecutar directamente este archivo, mostrando la salida final del programa
+
+Lenguaje interpretado (Python):
+   - Código fuente: archivo "programa.py", que contiene las instrucciones en Python
+   - Código objeto y código ejecutable: python no genera estos códigos. El intérprete lee el código fuente línea por línea y lo traduce internamente a instruciones que la CPU puede ejecutar
+
+Lenguaje con Máquina Virtual (Java):
+   - Código fuente: archivo "programa.java" contiene las instrucciones escritas en Java
+   - Código intermedio (Bytecode): al compilar, se genera un archivo .class que contiene bytecode, un código intermedio independiente del sistema operativo
+   - Código ejecutable: no tiene, en Java, el bytecode se traduce a lenguaje máquina, gestionando la memoria RAM, el procesador y los periféricos para mostrar la salida final
+
+
+##### 2. Para los lenguajes interpretados, describe cómo el código fuente se ejecutó directamente, sin generar archivos de código objeto o ejecutable
+
