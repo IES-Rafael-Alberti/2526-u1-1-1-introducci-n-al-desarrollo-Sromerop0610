@@ -37,33 +37,37 @@ Cada programa debe pedir el nombre del usuario, su año de nacimiento, calcular 
    - **Terminal utilizada:** Git Bash
    - **Lenguajes usados:**
       - **Python** (ejecutado mediante la extensión de Python en VS Code)
-      - **C** (ejecutado mediante la extensión Code Runner en VS Code)
-      - **Java** (ejecutado desde la extensión de Java en VS Code)
-   - No fue necesario instalar compiladores o intérpretes por separado, ya que VS code gestiona la ejecución de los tres lenguajes a través de las extensiones
+      - **C** (ejecutado mediante el compilador gcc)
+      - **Java** (ejecutado con el interprete de java JVM)
 
 2. **Pasos para Compilar el Código:**
    ```bash
-   [Comando para compilar el código]
+   javac programa.java # Java
+   ```
+   ```bash
+   gcc programa.c -o programa # C
    ```
 
 3. **Pasos para Ejecutar el Código:**
    ```bash
-   [Comando para ejecutar la aplicación]
+   python programa.py #Python
    ```
-
-4. **Ejecución de Pruebas:**
    ```bash
-   [Comandos para ejecutar pruebas, si las hubiera]
+   java programa # Java
+   ```
+   ```bash
+   ./ejercicio # C
    ```
 
 ## Desarrollo de la Actividad
-### Descripción del Desarrollo
-[Explicación de cómo se ha abordado el desarrollo de la actividad, incluyendo las decisiones de diseño, estructura del código y enfoque de resolución de problemas. Se recomienda adjuntar diagramas o capturas de pantalla si es necesario.]
-
 ### Código Fuente
    - Python: src/programa.py
    - C: src/programa.c
    - Java: src/programa.java
+### Capturas ejecución
+   - Python: CapturasEjecución/ejecutarpython.png
+   - C: CapturasEjecución/ejecutarc.jpg
+   - Java: CapturasEjecución/ejecutarjava.jpg
 
 ### Ejemplos de Ejecución
 - **Entrada 1:** nombre
@@ -75,29 +79,10 @@ Cada programa debe pedir el nombre del usuario, su año de nacimiento, calcular 
    - En C: Hola Pepe, tienes 25 años. Este programa está creado en el lenguaje de programación: C
    - En Python: Hola Pepe, tienes 25 años. Este programa está creado en el lenguaje de programación: Python
 
-### Resultados de Pruebas
-[Aquí se detallará cómo se ha verificado la funcionalidad del código, incluyendo resultados de pruebas automatizadas o manuales, en caso de que las haya.]
-
-## Documentación Adicional
-- **Manual de Usuario:** [Enlace a la documentación del usuario, si existe]
-- **Autorización de Permisos:** Verificar que el profesor tenga permisos de lectura en el repositorio para revisar el código.
-
 ## Conclusiones
-[Resumen de las conclusiones alcanzadas al desarrollar la actividad, las lecciones aprendidas, y posibles mejoras que se puedan implementar en futuras entregas.]
-
+Después de hacer los programas en los tres lenguajes  uno a uno, se puede ver que cada cual tiene una forma distinta de funcionar y de rendimiento. El lenguaje compilado (C) ofrece mucha velocidad y eficiencia, ya que el código se transforma directamente en instrucciones para el procesador, pero no es el más cómodo para programar (tiene algunos requerimientos más). El lenguaje interpretado (Python) resulta más lento, pero es más flexible y fácil de probar, viene bien para tareas rápidas o de aprendizaje, y pienso que es el más fácil de programar. Por último, el lenguaje que utiliza máquina virtual (Java) combina ventajas de ambos: ofrece portabilidad gracias al bytecode y tiene un rendimiento aceptable mediante la JVM. En conclusión, aunque C me parece más cómodo de corregir a la hora de detectar errores debido al compilador, Python me parece más fácil de programar, pero la elección del lenguaje depende del equilibrio que se busque entre rendimiento, facilidad y compatibilidad. 
 ## Referencias y Fuentes
-[Aquí se listarán las fuentes consultadas para el desarrollo de la actividad, tales como documentación oficial, artículos, o cualquier recurso externo relevante.]
-
-### Notas Adicionales:
-1. **Nombres de Archivos y Repositorios:**
-   - Asegúrate de que el nombre del archivo o repositorio siga la estructura definida: `XXX-idActividad-Iniciales`.
-2. **Permisos:**
-   - Verifica que el profesor tenga los permisos necesarios para acceder al repositorio o documento.
-3. **Formato:**
-   - Si se entrega en formato PDF o Google Docs, asegúrate de cumplir con el mínimo y máximo de folios establecidos.
-4. **Compilación y Ejecución:**
-   - Detalla claramente cómo compilar y ejecutar el código, incluyendo las instrucciones en el archivo `README.md`.
-
+Uso de ChatGPT para poder realizar el código en Java
 
 ## Respuesta a las preguntas
 
@@ -158,3 +143,57 @@ La máquina virtual sirve como un enlace entre el código intermedio (bytecode) 
 #####   - Modo de ejecución (interpretado vs compilado vs máquina virtual).
 #####   - Nivel de abstracción (alto nivel vs bajo nivel).
 #####   - Paradigma de programación (imperativo, orientado a objetos, funcional,...).
+INTERPRETADO (PYTHON):
+   - Modo de ejecución: interpretado línea a línea por un intérprete, sin crear archivo ejecutable
+   - Nivel de abstracción: alto nivel (muy cercano al lenguaje humano)
+   - Paradigma de programación: imperativo, aunque con soporte para el funcional
+
+COMPILADOR (C):
+   - Modo de ejecución: compilado a código máquina y ejecutado directamente por el sistema operativo
+   - Nivel de abstracción: medio a alto nivel, pero más cercano al hardware
+   - Paradigma de programación: imperativo y estructurado
+
+EJECUTADO EN MÁQUINA (JAVA):
+   - Modo de ejecución: compilado a código intermedio (bytecode) y ejecutado por una máquina virtual
+   - Nivel de abstración: alto nivel
+   - Paradigma de programación: orientado a objetos, con características imperativas y funcionales
+
+### Criterio de evaluación 1.f: Evaluación de Herramientras Utilizadas en el Desarrollo
+#### Preguntas
+##### 1. Para cada uno de los tres lenguajes (interpretado, compilado y en máquina virtual), describe las herramientas que utilizaste en el proceso de desarrollo:
+#####    - Sistema operativo (¿en qué sistema ejecutaste el programa?).
+#####    - Editor de texto o IDE (¿dónde escribiste el código?).
+#####    - Compilador o intérprete (¿cómo se transformó o ejecutó el código?).
+#####    - Depurador (si lo usaste, ¿cómo lo empleaste para encontrar errores?).
+#####    - Sistema de gestión de versiones (si lo usaste, ¿cómo guardaste las versiones del código?).
+#####    - Otras herramientas Añade alguna herramienta más a la lista. ¿Cómo te ayudó en el desarrollo?
+
+PYTHON:
+   - Sistema operativo: Windows 11
+   - Editor de texto o IDE: Visual Studio Code
+   - Compilador o intérprete: Python instalado en el sistema, ejecutado con el comando python programa.py
+   - Depurador: el depurador integrado en el VS Code
+   - Sistema de gestión de versiones: Git y Github para guardar los cambios del código y mantener versiones del proyecto
+   - Otras herramientas: Terminal de comandos, para ejecutar el código y comprobar su salida de forma rápida
+
+C:
+   - Sistema operativo: Windows 11
+   - Editor de texto o IDE: Code::Blocks
+   - Compilador o intérprete: gcc (GNU Compiler Collection), encargado de traducir el código fuente .c a un archivo .exe
+   - Depurador: el depurador de Code::Blocks
+   - Sistema de gestión de versiones: Git y GitHub para guardar los cambios del código y mantener versiones del proyecto
+   - Otras herramientas: Consola de ejecución de Code::Blocks, para ver los resultados de la compilación y salida del programa
+
+Java:
+   - Sistema operativo: Windows 11
+   - Editor de texto o IDE: Intellij IDEA
+   - Compilador o intérprete: compilador javac, que transforma el código fuente .java en bytecode .class
+   - Depurador: el depurador de Intellij IDEA
+   - Sistema de gestión de versiones: Git y GitHub para guardar los cambios del código y mantener versiones del proyecto
+   - Otras herramientas: terminal para ejecutar los programas, y la documentación oficial de Java (Java API) para hacer consultas
+
+
+
+
+
+
