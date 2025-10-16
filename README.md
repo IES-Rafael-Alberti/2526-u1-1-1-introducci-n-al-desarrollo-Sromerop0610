@@ -61,11 +61,19 @@ Cada programa debe pedir el nombre del usuario, su año de nacimiento, calcular 
 [Explicación de cómo se ha abordado el desarrollo de la actividad, incluyendo las decisiones de diseño, estructura del código y enfoque de resolución de problemas. Se recomienda adjuntar diagramas o capturas de pantalla si es necesario.]
 
 ### Código Fuente
-[Aquí se incluirá un enlace directo a los archivos de código fuente en el repositorio, por ejemplo, si se está usando GitHub: `src/main.java` o algún enlace directo.]
+   - Python: src/programa.py
+   - C: src/programa.c
+   - Java: src/programa.java
 
 ### Ejemplos de Ejecución
-- **Entrada 1:** Descripción de la entrada y valor de prueba.
-- **Salida Esperada 1:** Explicación de la salida esperada y el resultado de la prueba.
+- **Entrada 1:** nombre
+- **Entrada 2:** año de nacimiento
+- **Salida Esperada 1:** Hola (nombre), tienes (años) años. Este programa está creado en el lenguaje de programación: (lenguaje: C, Python o Java). 
+
+**Ejemplo: se introduce Pepe y después 2000**
+   - En Java: Hola Pepe, tienes 25 años. Este programa está creado en el lenguaje de programación: Java
+   - En C: Hola Pepe, tienes 25 años. Este programa está creado en el lenguaje de programación: C
+   - En Python: Hola Pepe, tienes 25 años. Este programa está creado en el lenguaje de programación: Python
 
 ### Resultados de Pruebas
 [Aquí se detallará cómo se ha verificado la funcionalidad del código, incluyendo resultados de pruebas automatizadas o manuales, en caso de que las haya.]
@@ -117,15 +125,36 @@ Lenguaje compilado (C):
    - Código objeto: al compilar, el compilador genera un archivo intermedio (programa.o). Este archivo contiene instrucciones en lenguaje máquina, que todavía no puede ejecutarse solo, ya que debe enlazarse con otras partes y bibliotecas necesarias
    - Código ejecutable: al enlazar el código objeto, se obtiene un archivo ejecutable (programa.ex en mi caso, ya que uso Windows). La CPU puede ejecutar directamente este archivo, mostrando la salida final del programa
 
+##### 2. Para los lenguajes interpretados, describe cómo el código fuente se ejecutó directamente, sin generar archivos de código objeto o ejecutable
 Lenguaje interpretado (Python):
-   - Código fuente: archivo "programa.py", que contiene las instrucciones en Python
-   - Código objeto y código ejecutable: python no genera estos códigos. El intérprete lee el código fuente línea por línea y lo traduce internamente a instruciones que la CPU puede ejecutar
+A diferencia de los lenguajes compilados, en los que el código fuente pasa por las etapas de código objeto y código ejecutable, los lenguajes interpretados ejecutan el programa directamente a partir del código fuente, sin necesidad de generar archivos intermedios.
+
+En este caso, el intérprete cumple la función de leer y traducir las instrucciones del código línea a línea, y las convierte de forma inmediata en lenguaje máquina, por lo que el procesador puede entenderlo y ejecutarlo.
+
+##### 3. Para el lenguaje que genera código intermedio (Java, C#), explica cómo el código fuente se transformó en código intermedio (bytecode) y cómo este fue ejecutado por la máquinada virtual.
 
 Lenguaje con Máquina Virtual (Java):
-   - Código fuente: archivo "programa.java" contiene las instrucciones escritas en Java
-   - Código intermedio (Bytecode): al compilar, se genera un archivo .class que contiene bytecode, un código intermedio independiente del sistema operativo
-   - Código ejecutable: no tiene, en Java, el bytecode se traduce a lenguaje máquina, gestionando la memoria RAM, el procesador y los periféricos para mostrar la salida final
+El código fuente no se ejecuta directamente ni se traduce de inmediato a un código ejecutable propio del sistema operativo. Lo que ocurre es que el compilador transforma el código fuente en un código intermedio, llamado bytecode.
+
+Este bytecode no está en lenguaje máquina, pero sí en un formato que una máquina virtual puede entender. En el caso de Java, esa máquina virtual es la JVM (Java Virtual Machine).
+
+Cuando el programa se ejecuta, la máquina virtual interpreta o compila el bytecode en tiempo real, traduciéndolo finalmente a lenguaje que el procesador del ordenador puede ejecutar.
 
 
-##### 2. Para los lenguajes interpretados, describe cómo el código fuente se ejecutó directamente, sin generar archivos de código objeto o ejecutable
+### Criterio de Evaluación 1.d: Generación de Código Intermedio para Máquinas Virtuales
+#### Preguntas:
+##### 1. Describe el proceso de generación de código intermedio (bytecode) en el lenguaje que utilizaste que emplea una máquina virtual (por ejemplo, Java o C#)
+Como hemos dicho antes, en el lenguaje Java, el código fuente pasa por una etapa intermedia, en la que se genera un código intermedio llamado bytecode. Para que exista el bytecode, el código pasa por un proceso:
+   1- Escritura del código: se escribe el código del programa en java con instrucciones legibles para el humano y se guarda en un archivo con extensión .java
+   2- Compilación a código intermedio (bytecode): el compilador de Java traduce el código fuente al bytecode, que se guarda en un archivo con extensión .class (este bytecode no se puede ejecutar directamente por el procesador, no es código máquina)
+   3- Ejecución en la Máquina Virtual (JVM): carga el archivo .class e interpreta el bytecode, traduciendolo a instrucciones de máquina específicas para el sistema operativo.
 
+##### 2. Explica qué rol juega la máquina virtual en la ejecución del código y cómo difiere de la ejecución directa en un sistema operativo como ocurre con los lenguajes compilados e interpretados.
+La máquina virtual sirve como un enlace entre el código intermedio (bytecode) y el equipo del ordenador. Su tarea es ͏leer o traducir al momento ese código para que funcione en cualquier sistema operativo, dando facilidad de mover y seguridad. A diferencia de los lenguajes com͏pilados que crean un archivo que solo funciona en ͏ciertos sistemas, y los que leen ͏directamente el ͏código fuente, la máquina virtual deja correr un mismo programa ͏en varias plataformas sin cambios.
+
+### Criterio de Evaluación 1.e: Clasificación de Lenguajes de Programación
+#### Preguntas:
+##### 1. Clasifica los tres lenguajes utilizados (interpretado, compilado y en máquina virtual) según su:
+#####   - Modo de ejecución (interpretado vs compilado vs máquina virtual).
+#####   - Nivel de abstracción (alto nivel vs bajo nivel).
+#####   - Paradigma de programación (imperativo, orientado a objetos, funcional,...).
